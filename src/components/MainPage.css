@@ -1,0 +1,81 @@
+.Main-page {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 25px 25px 115px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.main-header {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 100%;
+}
+
+.main-thumnail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.main-thumnail:last-child {
+    flex: 30%;
+}
+
+.main .content {
+    flex: 33%;
+}
+
+.main-left {
+    flex: 50%;
+    text-align: start;
+}
+
+.main-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex: 50%;
+}
+
+.ui {
+    background: #FFFFFF;
+    border: 1px solid #134B8A;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-right .selector-left {
+    flex: 15%;
+}
+
+.main-right .input-right {
+    flex: 35%;
+}
+
+.border {
+    border-right: 3px solid #E0E0E0;
+}
+
+@media (max-width: 375px) {
+    .Main-page {
+        padding: 25px;
+    }
+
+    .border {
+        display: none;
+    }
+
+    .main-right,
+    .main-left,
+    .main-right .selector-left,
+    .main-right .input-right {
+        flex: 100%;
+        gap: 5px;
+    }
+}

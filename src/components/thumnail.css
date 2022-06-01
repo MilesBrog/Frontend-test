@@ -1,0 +1,77 @@
+.clickable {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: stretch;
+    flex: 30%;
+    background: #FFFFFF;
+    gap: 10px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+.profile-store {
+    width: 60px;
+    height: 60px;
+}
+
+#pic-store {
+    width: 120px;
+    max-height: 120px;
+}
+
+.detail-top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.sperate-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex: 80%;
+}
+
+.store-name {
+    flex: 100%;
+    text-align: start;
+}
+
+.detail-bottom {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.pic-left {
+    border-radius: 10px 0px 0px 10px;
+    flex: 33%;
+}
+
+.pic-right {
+    border-radius: 0px 10px 10px 0px;
+    flex: 33%;
+}
+
+.pic-center {
+    flex: 33%;
+}
+
+.profile-store {
+    border-radius: 10px;
+}
+
+@media (max-width: 375px) {
+    .profile-store {
+        width: 100%;
+    }
+
+    .pic-left,.pic-right,.pic-center {
+        border-radius: 10px;
+        flex: 100%;
+    }
+  }
