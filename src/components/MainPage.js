@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import './MainPage.css'
 
 import Jsondata from '../data-json/example_data.json';
-import Thumnail from './thumnail';
+import Thumnail from './Thumnail';
 
 const MainPage = () => {
     const [category, setCategory] = useState("restaurant");
     const [searchName, setSearchname] = useState("");
-    const [selectStore, setSelectStore] = useState("");
+    //const [selectStore, setSelectStore] = useState("");
     const d = new Date();
     let day = d.getDay() - 1;
     if(day < 0)
@@ -17,16 +17,15 @@ const MainPage = () => {
 
     const valuechange = (e) => {
         setCategory(e.target.value);
-        console.log(category);
     }
 
     return (
         <div className="Main-page">
             <div className="main-header">
-                <div className="main-left">
+                <div className="Topic">
                     <h4>Place List</h4>
                 </div>
-                <div className="main-right">
+                <div className="Search">
                     <select className="ui selector-left" value={category} onChange={e => valuechange(e)}>
                         <option value="restaurant">Restaurant</option>
                         <option value="bakery">Bakery</option>
@@ -37,7 +36,7 @@ const MainPage = () => {
                         type="text"
                         placeholder="Search name.."
                         value={searchName}
-                        onChange={(e) => { setSearchname(e.target.value); console.log(searchName) }}
+                        onChange={(e) => setSearchname(e.target.value)}
                     />
                 </div>
             </div>
@@ -46,7 +45,7 @@ const MainPage = () => {
                     Jsondata.filter((filterCategory) => {
                         return filterCategory.categories.includes(category);
                     }).filter((filterName) => {
-                        return filterName.name.includes(searchName);
+                        return filterName.name.toLowerCase().includes(searchName.toLowerCase());
                     }).map(data => {
                         return (
                             <Thumnail
@@ -56,9 +55,10 @@ const MainPage = () => {
                                 open_time={data.operation_time[day].time_open}
                                 close_time={data.operation_time[day].time_close}
                                 rating={data.rating}
-                                images01={data.images[0]}
+                                /*images01={data.images[0]}
                                 images02={data.images[1]}
-                                images03={data.images[2]}
+                                images03={data.images[2]}*/
+                                picture={data.images}
                             />
                         )
                     })

@@ -7,7 +7,6 @@
 .App {
   text-align: center;
   position: relative;
-  background: #E5E5E5;
 }
 
 h4 {
@@ -22,15 +21,11 @@ h6 {
   font-size: 18px;
 }
 
-h7 {
-  font-size: 16px;
-}
-
 p {
   font-size: 14px;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 425px) {
   .responsive {
     display: none;
   }
